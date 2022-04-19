@@ -69,23 +69,25 @@ public class HelloServlet extends HttpServlet {
         String trat = request.getParameter("trat");
         String gen = request.getParameter("gen");
         
+        
   
         if(lang==null)
             lang = "pt";
         switch(lang){
             case "pt":
-                
-                if(hora < 12 ) {
-                        msg =  "Bom dia ";
-                }else if(hora >= 12 && hora < 18) {
-                        msg = "Boa Tarde ";
-                }else {
-                        msg = "Boa Noite ";
-                    
-                switch(gen){  
-                    case "ge":
-                        msg = "Olá";
-                }     
+                if(gen.contains("ge")){
+                    msg = "Olá ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Bom dia ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Boa Tarde ";
+                    }else {
+                            msg = "Boa Noite ";
+                    }
+
+                }
                 switch(trat){
                     case "no":
                         break;
@@ -95,6 +97,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Sra. ";
                         break;
+                }break;
             case "en":
                 if(gen == "ge"){
                     msg = "Hello ";
@@ -262,7 +265,7 @@ public class HelloServlet extends HttpServlet {
             lang = "pt";
         switch(lang){
             case "pt":
-                if(gen == "ge"){
+                if(gen.contains("ge")){
                     msg = "Olá ";
                 }
                 else{
