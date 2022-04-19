@@ -99,7 +99,7 @@ public class HelloServlet extends HttpServlet {
                         break;
                 }break;
             case "en":
-                if(gen == "ge"){
+                if(gen.contains("ge")){
                     msg = "Hello ";
                 }
                 else{
@@ -122,7 +122,7 @@ public class HelloServlet extends HttpServlet {
                         break;
                 }break;
             case "fr":
-                if(gen == "ge"){
+                if(gen.contains("ge")){
                     msg = "Bonjour ";
                 }
                 else{
@@ -145,7 +145,7 @@ public class HelloServlet extends HttpServlet {
                         break;
                 }break;
              case "es":
-                 if(gen == "ge"){
+                 if(gen.contains("ge")){
                     msg = "hola ";
                 }
                 else{
@@ -169,7 +169,7 @@ public class HelloServlet extends HttpServlet {
                 }
                 break;
              case "it":
-                  if(gen == "ge"){
+                  if(gen.contains("ge")){
                     msg = "Ciao ";
                 }
                 else{
@@ -192,7 +192,7 @@ public class HelloServlet extends HttpServlet {
                         break;
                 }break;
             case "de":
-                 if(gen == "ge"){
+                 if(gen.contains("ge")){
                     msg = "Hallo ";
                 }
                 else{
@@ -260,6 +260,7 @@ public class HelloServlet extends HttpServlet {
         String trat = request.getParameter("trat");
         String gen = request.getParameter("gen");
         
+        
   
         if(lang==null)
             lang = "pt";
@@ -289,7 +290,7 @@ public class HelloServlet extends HttpServlet {
                         break;
                 }break;
             case "en":
-                if(gen == "ge"){
+                if(gen.contains("ge")){
                     msg = "Hello ";
                 }
                 else{
@@ -312,7 +313,7 @@ public class HelloServlet extends HttpServlet {
                         break;
                 }break;
             case "fr":
-                if(gen == "ge"){
+                if(gen.contains("ge")){
                     msg = "Bonjour ";
                 }
                 else{
@@ -335,7 +336,7 @@ public class HelloServlet extends HttpServlet {
                         break;
                 }break;
              case "es":
-                 if(gen == "ge"){
+                 if(gen.contains("ge")){
                     msg = "hola ";
                 }
                 else{
@@ -359,7 +360,7 @@ public class HelloServlet extends HttpServlet {
                 }
                 break;
              case "it":
-                  if(gen == "ge"){
+                  if(gen.contains("ge")){
                     msg = "Ciao ";
                 }
                 else{
@@ -382,7 +383,7 @@ public class HelloServlet extends HttpServlet {
                         break;
                 }break;
             case "de":
-                 if(gen == "ge"){
+                 if(gen.contains("ge")){
                     msg = "Hallo ";
                 }
                 else{
