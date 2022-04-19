@@ -96,7 +96,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Sra. ";
                         break;
-                }
+                }break;
             case "en":
                 if(gen == "ge"){
                     msg = "Hello ";
@@ -119,7 +119,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Mrs.";
                         break;
-                }
+                }break;
             case "fr":
                 if(gen == "ge"){
                     msg = "Bonjour ";
@@ -142,7 +142,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Mme. ";
                         break;
-                }
+                }break;
              case "es":
                  if(gen == "ge"){
                     msg = "hola ";
@@ -189,7 +189,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Sig.ra. ";
                         break;
-                }
+                }break;
             case "de":
                  if(gen == "ge"){
                     msg = "Hallo ";
@@ -212,7 +212,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Herrin. ";
                         break;
-                }
+                }break;
         }
         
         
@@ -286,7 +286,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Sra. ";
                         break;
-                }
+                }break;
             case "en":
                 if(gen == "ge"){
                     msg = "Hello ";
@@ -309,7 +309,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Mrs.";
                         break;
-                }
+                }break;
             case "fr":
                 if(gen == "ge"){
                     msg = "Bonjour ";
@@ -332,7 +332,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Mme. ";
                         break;
-                }
+                }break;
              case "es":
                  if(gen == "ge"){
                     msg = "hola ";
@@ -379,7 +379,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Sig.ra. ";
                         break;
-                }
+                }break;
             case "de":
                  if(gen == "ge"){
                     msg = "Hallo ";
@@ -402,7 +402,7 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Herrin. ";
                         break;
-                }
+                }break;
         }
         
         
