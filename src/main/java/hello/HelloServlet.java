@@ -74,7 +74,7 @@ public class HelloServlet extends HttpServlet {
             lang = "pt";
         switch(lang){
             case "pt":
-                if(!gen.isBlank()){
+                if(!gen.isEmpty()){
                     msg = "Olá ";
                 }
                 else{
