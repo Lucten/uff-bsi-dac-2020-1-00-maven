@@ -7,6 +7,7 @@ package hello;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -60,20 +61,69 @@ public class HelloServlet extends HttpServlet {
             throws ServletException, IOException {
         
         String msg = "";
+        Calendar cal = Calendar.getInstance();
+	System.out.println(cal.getTime());
+	int hora = cal.get(Calendar.HOUR_OF_DAY);
         
         String lang = request.getParameter("lang");
         if(lang==null)
             lang = "pt";
         switch(lang){
             case "pt":
-                msg = "Alô, ";
+                if(hora < 12 ) {
+			msg =  "Bom dia ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Boa Tarde ";
+		}else {
+			msg = "Boa Noite ";
+		}
                 break;
             case "en":
-                msg = "Hello, ";
+                if(hora < 12 ) {
+			msg =  "Good Morning ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Good afternoon ";
+		}else {
+			msg = "Good night ";
+		}
                 break;
             case "fr":
-                msg = "Bonjour, ";
+                if(hora < 12 ) {
+			msg =  "Bonjour ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Bon après-midi ";
+		}else {
+			msg = "Bonne nuit ";
+		}
                 break;
+             case "es":
+                if(hora < 12 ) {
+			msg =  "Buenos dias ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Buenas tardes ";
+		}else {
+			msg = "Buenas noches ";
+		}
+                break;
+             case "it":
+                if(hora < 12 ) {
+			msg =  "Buongiorno ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Buon pomeriggio ";
+		}else {
+			msg = "Buona notte ";
+		}
+                break;
+            case "de":
+                if(hora < 12 ) {
+			msg =  "Guten Morgen ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Guten tag ";
+		}else {
+			msg = "Gute Nacht ";
+		}
+                break;
+             
         }
         
         String nome = request.getParameter("nome");
@@ -111,23 +161,69 @@ public class HelloServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String msg = "";
+        Calendar cal = Calendar.getInstance();
+	System.out.println(cal.getTime());
+	int hora = cal.get(Calendar.HOUR_OF_DAY);
         
         String lang = request.getParameter("lang");
         if(lang==null)
             lang = "pt";
         switch(lang){
             case "pt":
-                msg = "Alô, ";
+                if(hora < 12 ) {
+			msg =  "Bom dia ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Boa Tarde ";
+		}else {
+			msg = "Boa Noite ";
+		}
                 break;
             case "en":
-                msg = "Hello, ";
+                if(hora < 12 ) {
+			msg =  "Good Morning ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Good afternoon ";
+		}else {
+			msg = "Good night ";
+		}
                 break;
             case "fr":
-                msg = "Bonjour, ";
+                if(hora < 12 ) {
+			msg =  "Bonjour ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Bon après-midi ";
+		}else {
+			msg = "Bonne nuit ";
+		}
+                break;
+             case "es":
+                if(hora < 12 ) {
+			msg =  "Buenos dias ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Buenas tardes ";
+		}else {
+			msg = "Buenas noches ";
+		}
+                break;
+             case "it":
+                if(hora < 12 ) {
+			msg =  "Buongiorno ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Buon pomeriggio ";
+		}else {
+			msg = "Buona notte ";
+		}
                 break;
             case "de":
-                msg = "Hallo, ";
+                if(hora < 12 ) {
+			msg =  "Guten Morgen ";
+		}else if(hora >= 12 && hora < 18) {
+			msg = "Guten tag ";
+		}else {
+			msg = "Gute Nacht ";
+		}
                 break;
+             
         }
         
         String nome = request.getParameter("nome");
