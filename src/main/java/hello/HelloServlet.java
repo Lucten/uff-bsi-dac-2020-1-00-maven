@@ -66,65 +66,114 @@ public class HelloServlet extends HttpServlet {
 	int hora = cal.get(Calendar.HOUR_OF_DAY);
         
         String lang = request.getParameter("lang");
+        String trat = request.getParameter("trat");
+        String gen = request.getParameter("gen");
+        
+  
         if(lang==null)
             lang = "pt";
         switch(lang){
             case "pt":
-                if(hora < 12 ) {
-			msg =  "Bom dia ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Boa Tarde ";
-		}else {
-			msg = "Boa Noite ";
-		}
-                break;
+                if(gen == "ge"){
+                    msg = "Olá ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Bom dia ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Boa Tarde ";
+                    }else {
+                            msg = "Boa Noite ";
+                    }
+
+                    break;
+                }
             case "en":
-                if(hora < 12 ) {
-			msg =  "Good Morning ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Good afternoon ";
-		}else {
-			msg = "Good night ";
-		}
-                break;
+                if(gen == "ge"){
+                    msg = "Hello ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Good Morning ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Good afternoon ";
+                    }else {
+                            msg = "Good night ";
+                    }
+                    break;
+                }
             case "fr":
-                if(hora < 12 ) {
-			msg =  "Bonjour ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Bon après-midi ";
-		}else {
-			msg = "Bonne nuit ";
-		}
-                break;
+                if(gen == "ge"){
+                    msg = "Bonjour ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Bonjour ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Bon après-midi ";
+                    }else {
+                            msg = "Bonne nuit ";
+                    }
+                    break;
+                }
              case "es":
-                if(hora < 12 ) {
-			msg =  "Buenos dias ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Buenas tardes ";
-		}else {
-			msg = "Buenas noches ";
-		}
+                 if(gen == "ge"){
+                    msg = "hola ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Buenos dias ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Buenas tardes ";
+                    }else {
+                            msg = "Buenas noches ";
+                    }
+                 }
                 break;
              case "it":
-                if(hora < 12 ) {
-			msg =  "Buongiorno ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Buon pomeriggio ";
-		}else {
-			msg = "Buona notte ";
-		}
-                break;
+                  if(gen == "ge"){
+                    msg = "Ciao ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Buongiorno ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Buon pomeriggio ";
+                    }else {
+                            msg = "Buona notte ";
+                    }
+                    break;
+                  }
             case "de":
-                if(hora < 12 ) {
-			msg =  "Guten Morgen ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Guten tag ";
-		}else {
-			msg = "Gute Nacht ";
-		}
-                break;
-             
+                 if(gen == "ge"){
+                    msg = "Hallo ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Guten Morgen ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Guten tag ";
+                    }else {
+                            msg = "Gute Nacht ";
+                    }
+                    break;
+                 }
         }
+        
+        
+        
+        switch(trat){
+            case "no":
+                break;
+            case "sr":
+                msg = msg + "Sr.";
+                break;
+            case "sa":
+                msg = msg + "Sra.";
+                break;
+        }
+        
+        
         
         String nome = request.getParameter("nome");
 
@@ -160,12 +209,13 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String msg = "";
+       String msg = "";
         Calendar cal = Calendar.getInstance();
 	System.out.println(cal.getTime());
 	int hora = cal.get(Calendar.HOUR_OF_DAY);
         
         String lang = request.getParameter("lang");
+        String trat = request.getParameter("trat");
         if(lang==null)
             lang = "pt";
         switch(lang){
@@ -224,6 +274,17 @@ public class HelloServlet extends HttpServlet {
 		}
                 break;
              
+        }
+        
+        switch(trat){
+            case "no":
+                break;
+            case "sr":
+                msg = msg + "Sr.";
+                break;
+            case "sa":
+                msg = msg + "Sra.";
+                break;
         }
         
         String nome = request.getParameter("nome");
