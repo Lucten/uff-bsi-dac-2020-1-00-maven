@@ -88,6 +88,16 @@ public class HelloServlet extends HttpServlet {
 
                     break;
                 }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Sr.";
+                        break;
+                    case "sa":
+                        msg = msg + "Sra.";
+                        break;
+                }
             case "en":
                 if(gen == "ge"){
                     msg = "Hello ";
@@ -101,6 +111,16 @@ public class HelloServlet extends HttpServlet {
                             msg = "Good night ";
                     }
                     break;
+                }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Mr.";
+                        break;
+                    case "sa":
+                        msg = msg + "Mrs.";
+                        break;
                 }
             case "fr":
                 if(gen == "ge"){
@@ -116,6 +136,16 @@ public class HelloServlet extends HttpServlet {
                     }
                     break;
                 }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "M.";
+                        break;
+                    case "sa":
+                        msg = msg + "Mme.";
+                        break;
+                }
              case "es":
                  if(gen == "ge"){
                     msg = "hola ";
@@ -129,6 +159,16 @@ public class HelloServlet extends HttpServlet {
                             msg = "Buenas noches ";
                     }
                  }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Señor.";
+                        break;
+                    case "sa":
+                        msg = msg + "Sra.";
+                        break;
+                }
                 break;
              case "it":
                   if(gen == "ge"){
@@ -144,6 +184,16 @@ public class HelloServlet extends HttpServlet {
                     }
                     break;
                   }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Sig.";
+                        break;
+                    case "sa":
+                        msg = msg + "Sig.ra.";
+                        break;
+                }
             case "de":
                  if(gen == "ge"){
                     msg = "Hallo ";
@@ -158,21 +208,17 @@ public class HelloServlet extends HttpServlet {
                     }
                     break;
                  }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Herr.";
+                        break;
+                    case "sa":
+                        msg = msg + "Herrin.";
+                        break;
+                }
         }
-        
-        
-        
-        switch(trat){
-            case "no":
-                break;
-            case "sr":
-                msg = msg + "Sr.";
-                break;
-            case "sa":
-                msg = msg + "Sra.";
-                break;
-        }
-        
         
         
         String nome = request.getParameter("nome");
