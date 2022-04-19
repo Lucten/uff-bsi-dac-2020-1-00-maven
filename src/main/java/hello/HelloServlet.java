@@ -74,19 +74,18 @@ public class HelloServlet extends HttpServlet {
             lang = "pt";
         switch(lang){
             case "pt":
-                if(gen!=null){
-                    msg = "Olá ";
-                }
-                else{
-                    if(hora < 12 ) {
-                            msg =  "Bom dia ";
-                    }else if(hora >= 12 && hora < 18) {
-                            msg = "Boa Tarde ";
-                    }else {
-                            msg = "Boa Noite ";
-                    }
-
-                }
+                
+                if(hora < 12 ) {
+                        msg =  "Bom dia ";
+                }else if(hora >= 12 && hora < 18) {
+                        msg = "Boa Tarde ";
+                }else {
+                        msg = "Boa Noite ";
+                    
+                switch(gen){  
+                    case "ge":
+                        msg = "Olá";
+                }     
                 switch(trat){
                     case "no":
                         break;
@@ -96,7 +95,6 @@ public class HelloServlet extends HttpServlet {
                     case "sa":
                         msg = msg + "Sra. ";
                         break;
-                }break;
             case "en":
                 if(gen == "ge"){
                     msg = "Hello ";
