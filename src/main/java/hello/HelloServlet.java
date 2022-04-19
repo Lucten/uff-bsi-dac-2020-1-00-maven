@@ -86,16 +86,15 @@ public class HelloServlet extends HttpServlet {
                             msg = "Boa Noite ";
                     }
 
-                    break;
                 }
                 switch(trat){
                     case "no":
                         break;
                     case "sr":
-                        msg = msg + "Sr.";
+                        msg = msg + "Sr. ";
                         break;
                     case "sa":
-                        msg = msg + "Sra.";
+                        msg = msg + "Sra. ";
                         break;
                 }
             case "en":
@@ -110,7 +109,6 @@ public class HelloServlet extends HttpServlet {
                     }else {
                             msg = "Good night ";
                     }
-                    break;
                 }
                 switch(trat){
                     case "no":
@@ -134,7 +132,6 @@ public class HelloServlet extends HttpServlet {
                     }else {
                             msg = "Bonne nuit ";
                     }
-                    break;
                 }
                 switch(trat){
                     case "no":
@@ -182,7 +179,6 @@ public class HelloServlet extends HttpServlet {
                     }else {
                             msg = "Buona notte ";
                     }
-                    break;
                   }
                 switch(trat){
                     case "no":
@@ -206,7 +202,6 @@ public class HelloServlet extends HttpServlet {
                     }else {
                             msg = "Gute Nacht ";
                     }
-                    break;
                  }
                 switch(trat){
                     case "no":
@@ -281,16 +276,15 @@ public class HelloServlet extends HttpServlet {
                             msg = "Boa Noite ";
                     }
 
-                    break;
                 }
                 switch(trat){
                     case "no":
                         break;
                     case "sr":
-                        msg = msg + "Sr.";
+                        msg = msg + "Sr. ";
                         break;
                     case "sa":
-                        msg = msg + "Sra.";
+                        msg = msg + "Sra. ";
                         break;
                 }
             case "en":
@@ -305,7 +299,6 @@ public class HelloServlet extends HttpServlet {
                     }else {
                             msg = "Good night ";
                     }
-                    break;
                 }
                 switch(trat){
                     case "no":
@@ -329,7 +322,6 @@ public class HelloServlet extends HttpServlet {
                     }else {
                             msg = "Bonne nuit ";
                     }
-                    break;
                 }
                 switch(trat){
                     case "no":
@@ -377,7 +369,6 @@ public class HelloServlet extends HttpServlet {
                     }else {
                             msg = "Buona notte ";
                     }
-                    break;
                   }
                 switch(trat){
                     case "no":
@@ -401,7 +392,6 @@ public class HelloServlet extends HttpServlet {
                     }else {
                             msg = "Gute Nacht ";
                     }
-                    break;
                  }
                 switch(trat){
                     case "no":
