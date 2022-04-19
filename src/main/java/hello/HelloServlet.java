@@ -116,7 +116,7 @@ public class HelloServlet extends HttpServlet {
                     case "no":
                         break;
                     case "sr":
-                        msg = msg + "Mr.";
+                        msg = msg + "Mr. ";
                         break;
                     case "sa":
                         msg = msg + "Mrs.";
@@ -140,10 +140,10 @@ public class HelloServlet extends HttpServlet {
                     case "no":
                         break;
                     case "sr":
-                        msg = msg + "M.";
+                        msg = msg + "M. ";
                         break;
                     case "sa":
-                        msg = msg + "Mme.";
+                        msg = msg + "Mme. ";
                         break;
                 }
              case "es":
@@ -163,10 +163,10 @@ public class HelloServlet extends HttpServlet {
                     case "no":
                         break;
                     case "sr":
-                        msg = msg + "Señor.";
+                        msg = msg + "Señor. ";
                         break;
                     case "sa":
-                        msg = msg + "Sra.";
+                        msg = msg + "Sra. ";
                         break;
                 }
                 break;
@@ -188,10 +188,10 @@ public class HelloServlet extends HttpServlet {
                     case "no":
                         break;
                     case "sr":
-                        msg = msg + "Sig.";
+                        msg = msg + "Sig. ";
                         break;
                     case "sa":
-                        msg = msg + "Sig.ra.";
+                        msg = msg + "Sig.ra. ";
                         break;
                 }
             case "de":
@@ -212,10 +212,10 @@ public class HelloServlet extends HttpServlet {
                     case "no":
                         break;
                     case "sr":
-                        msg = msg + "Herr.";
+                        msg = msg + "Herr. ";
                         break;
                     case "sa":
-                        msg = msg + "Herrin.";
+                        msg = msg + "Herrin. ";
                         break;
                 }
         }
@@ -262,76 +262,159 @@ public class HelloServlet extends HttpServlet {
         
         String lang = request.getParameter("lang");
         String trat = request.getParameter("trat");
+        String gen = request.getParameter("gen");
+        
+  
         if(lang==null)
             lang = "pt";
         switch(lang){
             case "pt":
-                if(hora < 12 ) {
-			msg =  "Bom dia ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Boa Tarde ";
-		}else {
-			msg = "Boa Noite ";
-		}
-                break;
+                if(gen == "ge"){
+                    msg = "Olá ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Bom dia ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Boa Tarde ";
+                    }else {
+                            msg = "Boa Noite ";
+                    }
+
+                    break;
+                }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Sr.";
+                        break;
+                    case "sa":
+                        msg = msg + "Sra.";
+                        break;
+                }
             case "en":
-                if(hora < 12 ) {
-			msg =  "Good Morning ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Good afternoon ";
-		}else {
-			msg = "Good night ";
-		}
-                break;
+                if(gen == "ge"){
+                    msg = "Hello ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Good Morning ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Good afternoon ";
+                    }else {
+                            msg = "Good night ";
+                    }
+                    break;
+                }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Mr. ";
+                        break;
+                    case "sa":
+                        msg = msg + "Mrs.";
+                        break;
+                }
             case "fr":
-                if(hora < 12 ) {
-			msg =  "Bonjour ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Bon après-midi ";
-		}else {
-			msg = "Bonne nuit ";
-		}
-                break;
+                if(gen == "ge"){
+                    msg = "Bonjour ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Bonjour ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Bon après-midi ";
+                    }else {
+                            msg = "Bonne nuit ";
+                    }
+                    break;
+                }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "M. ";
+                        break;
+                    case "sa":
+                        msg = msg + "Mme. ";
+                        break;
+                }
              case "es":
-                if(hora < 12 ) {
-			msg =  "Buenos dias ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Buenas tardes ";
-		}else {
-			msg = "Buenas noches ";
-		}
+                 if(gen == "ge"){
+                    msg = "hola ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Buenos dias ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Buenas tardes ";
+                    }else {
+                            msg = "Buenas noches ";
+                    }
+                 }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Señor. ";
+                        break;
+                    case "sa":
+                        msg = msg + "Sra. ";
+                        break;
+                }
                 break;
              case "it":
-                if(hora < 12 ) {
-			msg =  "Buongiorno ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Buon pomeriggio ";
-		}else {
-			msg = "Buona notte ";
-		}
-                break;
+                  if(gen == "ge"){
+                    msg = "Ciao ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Buongiorno ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Buon pomeriggio ";
+                    }else {
+                            msg = "Buona notte ";
+                    }
+                    break;
+                  }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Sig. ";
+                        break;
+                    case "sa":
+                        msg = msg + "Sig.ra. ";
+                        break;
+                }
             case "de":
-                if(hora < 12 ) {
-			msg =  "Guten Morgen ";
-		}else if(hora >= 12 && hora < 18) {
-			msg = "Guten tag ";
-		}else {
-			msg = "Gute Nacht ";
-		}
-                break;
-             
+                 if(gen == "ge"){
+                    msg = "Hallo ";
+                }
+                else{
+                    if(hora < 12 ) {
+                            msg =  "Guten Morgen ";
+                    }else if(hora >= 12 && hora < 18) {
+                            msg = "Guten tag ";
+                    }else {
+                            msg = "Gute Nacht ";
+                    }
+                    break;
+                 }
+                switch(trat){
+                    case "no":
+                        break;
+                    case "sr":
+                        msg = msg + "Herr. ";
+                        break;
+                    case "sa":
+                        msg = msg + "Herrin. ";
+                        break;
+                }
         }
         
-        switch(trat){
-            case "no":
-                break;
-            case "sr":
-                msg = msg + "Sr.";
-                break;
-            case "sa":
-                msg = msg + "Sra.";
-                break;
-        }
         
         String nome = request.getParameter("nome");
 
